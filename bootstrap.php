@@ -135,6 +135,101 @@ $r->post('/exercicio4/resposta', function(){
 
 });
 
+## Ex5
+
+$r->get('/exercicio5/formulario', function(){
+    include("exercicio5.html");
+});
+
+$r->post('/exercicio5/resposta', function(){
+    $valor = $_POST['valorFatorial'];
+
+    $fatorial =1;
+    $contador =1;
+    
+    while($contador<=$valor){
+     $fatorial *= $contador;
+     $contador++;
+    } 
+    echo "O fatorial do número {$valor} é igual a {$fatorial}";
+
+});
+
+## Ex6
+
+$r->get('/exercicio6/formulario', function(){
+    include("exercicio6.html");
+});
+
+$r->post('/exercicio6/resposta', function(){
+    $valorA = $_POST['valorA'];
+    $valorB = $_POST['valorB'];
+
+    $vetor = array();
+    array_push($vetor, $valorA);
+    array_push($vetor, $valorB);
+
+
+    if ($vetor[0] == $vetor[1]) {
+        echo "Números iguais: {$vetor[0]}";
+    }
+    else if ($vetor[1] < $vetor[0]){
+        echo "{$vetor[1]} {$vetor[0]}";
+    }
+    else {
+        echo "{$vetor[0]} {$vetor[1]}";
+    }
+
+});
+
+## Ex7
+
+$r->get('/exercicio7/formulario', function(){
+    include("exercicio7.html");
+});
+
+$r->post('/exercicio7/resposta', function(){
+    $valorMetros = $_POST['valorMetros'];
+
+    $valorCentimetros = $valorMetros * 100;
+
+    return "{$valorMetros}m é igual a {$valorCentimetros}cm";
+});
+
+## Ex8
+
+$r->get('/exercicio8/formulario', function(){
+    include("exercicio8.html");
+});
+
+$r->post('/exercicio8/resposta', function(){
+    $area = $_POST['area'];
+
+    $litrosTinta = $area / 3;
+    $nLatas = ceil($litrosTinta / 18);
+
+    $custoLatas = $nLatas * 80;
+    $formatarValorCustoLatas = number_format($custoLatas,0,",",".");
+    return "Você vai precisar de {$nLatas} lata(s) e irá gastar {$formatarValorCustoLatas} reais";
+});
+
+## Ex9
+
+$r->get('/exercicio9/formulario', function(){
+    include("exercicio9.html");
+});
+
+$r->post('/exercicio9/resposta', function(){
+    $anoNascimento = $_POST['anoNasc'];
+
+    define('ANO_ATUAL', date('Y'));
+
+    $idade = $anoAtual - $anoNascimento;
+
+
+    return "";
+});
+
 #ROTAS
 
 $resultado = $r->handler();
