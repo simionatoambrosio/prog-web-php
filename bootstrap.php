@@ -224,10 +224,48 @@ $r->post('/exercicio9/resposta', function(){
 
     define('ANO_ATUAL', date('Y'));
 
-    $idade = $anoAtual - $anoNascimento;
+    $idade = ANO_ATUAL - $anoNascimento;
+    $nDiasVividos = $idade * 365; // assumindo que um ano tem 365 dias
+    // assumindo que não levaremos em conta anos bissextos
+
+    $idade2025 = 2025 - $anoNascimento;
 
 
-    return "";
+
+    return "Você possui {$idade} anos, já viveu aproximadamente {$nDiasVividos} dias e terá {$idade2025} anos em 2025";
+});
+
+## Ex10
+
+$r->get('/exercicio10/formulario', function(){
+    include("exercicio10.html");
+});
+
+$r->post('/exercicio10/resposta', function(){
+    $peso = $_POST['peso'];
+    $altura = $_POST['altura'];
+
+    $imc = $peso / ($altura * $altura);
+
+    if ($imc < 18.5) {
+        $resposta = "Magreza";
+    }
+    else if ($imc >= 18.5 && $imc <= 24.9) {
+        $resposta = "Normal";
+    }
+    else if ($imc >= 25 && $imc <= 29.9) {
+        $resposta = "Sobrepeso";
+    }
+    else if ($imc >= 30 && $imc <= 39.9) {
+        $resposta = "Obesidade";
+    }
+    else if ($imc >= 40) {
+        $resposta = "Obsidade grave";
+    }
+
+    echo "Com base no IMC você está classificado como <strong>{$resposta}</strong>";
+
+    echo "<p>Para saber mais sobre o Índice de Massa Corporal (IMC), <a href='https://www.programasaudefacil.com.br/calculadora-de-imc' target='_blank'>acesse o site</a>.</p>";
 });
 
 #ROTAS
