@@ -9,9 +9,7 @@ $r = new Php\Primeiroprojeto\Router($metodo, $caminho);
 
 #ROTAS
 
-$r->get('/olamundo', function (){
-    return "Olá mundo!";
-});
+$r->get('/olamundo', 'Php\Primeiroprojeto\Controllers\HomeController@olaMundo');
 
 $r->get('/olapessoa', function(){
     return "Olá pessoa";
@@ -21,9 +19,7 @@ $r->get('/olapessoa/{nome}', function($params){
     return 'Olá, '.$params[1];
 });
 
-$r->get('/exer1/formulario', function(){
-    include("exer1.html");
-});
+$r->get('/exer1/formulario', 'Php\Primeiroprojeto\Controllers\HomeController@formExer1');
 
 $r->post('/exer1/resposta', function(){
     $valor1 = $_POST['valor1'];
@@ -34,6 +30,10 @@ $r->post('/exer1/resposta', function(){
     return "A soma é: {$soma}";
 
 });
+
+// entendimento básico de funcionamento de rotas em aplicações
+// nomear as rotas -> o caminho que o servidor vai identificar
+// após identificar ele irá executar a função associada
 
 # Exercícios
 # Ex1
@@ -279,8 +279,17 @@ if(!$resultado){
     die();
 }
 
-#se existir a rota, executa essa função e passa os parâmetros respectivos
-echo $resultado($r->getParams());
+if($resultado instanceof Closure) { // dentro dessa variável há uma função?
+    #se existir a rota, executa essa função e passa os parâmetros respectivos
+    echo $resultado($r->getParams());
+}
+elseif(is_string($resultado)){
+    $resultado = explode("@", $resultado); // separa a variavel do nome do método
+    $controller = new $resultado[0]; // instanciando o controller
+    $resultado = $resultado[1]; 
+    // acessando o método
+    echo $controller->$resultado($r->getParams());
+}
 
 
 
