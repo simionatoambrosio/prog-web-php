@@ -18,10 +18,10 @@ USE `mydb` ;
 -- Table `mydb`.`categoria`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`categoria` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `descricao` VARCHAR(150) NOT NULL,
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB;
+  PRIMARY KEY (`id`)
+) ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -38,8 +38,8 @@ CREATE TABLE IF NOT EXISTS `mydb`.`produto` (
     FOREIGN KEY (`categoria_id`)
     REFERENCES `mydb`.`categoria` (`id`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+    ON UPDATE NO ACTION
+) ENGINE = InnoDB;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;

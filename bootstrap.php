@@ -268,6 +268,18 @@ $r->post('/exercicio10/resposta', function(){
     echo "<p>Para saber mais sobre o Índice de Massa Corporal (IMC), <a href='https://www.programasaudefacil.com.br/calculadora-de-imc' target='_blank'>acesse o site</a>.</p>";
 });
 
+# Projeto CRUD
+# Categoria
+
+# Chamando o formulário para inserir categoria
+$r->get('/categoria/inserir', 'Php\Primeiroprojeto\Controllers\CategoriaController@inserir');
+
+# Enviando os dados para serem armazenados no banco de dados
+$r->post('/categoria/novo', 'Php\Primeiroprojeto\Controllers\CategoriaController@novo');
+
+
+
+
 #ROTAS
 
 $resultado = $r->handler();
