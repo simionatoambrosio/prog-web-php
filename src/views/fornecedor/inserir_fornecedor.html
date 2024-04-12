@@ -5,17 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>Inserir categoria</title>
+    <title>Inserir fornecedor</title>
   </head>
   <body>
     <main class="container mt-5">
-        <h3>Inserir categoria</h3>
+        <h3>Inserir fornecedor</h3>
     
-        <form action="/categoria/novo" method="POST">
+        <form action="/cliente/novo" method="POST">
             <div class="row mb-3 mt-3">
                 <div class="col-6">
-                    <label for="descricao" class="form-label">Descricao</label>
-                    <input type="text" class="form-control" name="descricao" placeholder="Descrição">
+                    <label for="descricao" class="form-label">Nome</label>
+                    <input type="text" class="form-control" name="nome" placeholder="Nome">
+                    
+                    <label for="descricao" class="form-label mt-2">Telefone</label>
+                    <input type="text" class="form-control" name="telefone" placeholder="99999999999">
+                    
+                    <label for="descricao" class="form-label mt-2">Email</label>
+                    <input type="email" class="form-control" name="email" placeholder="email@email.com.br">
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Enviar</button>

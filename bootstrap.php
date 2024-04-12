@@ -278,6 +278,24 @@ $r->get('/categoria/inserir', 'Php\Primeiroprojeto\Controllers\CategoriaControll
 $r->post('/categoria/novo', 'Php\Primeiroprojeto\Controllers\CategoriaController@novo');
 
 
+# Produto
+
+# Chamando o formulário para inserir produto
+$r->get('/produto/inserir', 'Php\Primeiroprojeto\Controllers\ProdutoController@inserir');
+
+# Enviando os dados para serem armazenados no banco de dados
+$r->post('/produto/novo', 'Php\Primeiroprojeto\Controllers\ProdutoController@novo');
+
+
+# Cliente
+
+# Chamando o formulário para inserir produto
+$r->get('/cliente/inserir', 'Php\Primeiroprojeto\Controllers\ClienteController@inserir');
+
+# Enviando os dados para serem armazenados no banco de dados
+$r->post('/cliente/novo', 'Php\Primeiroprojeto\Controllers\ClienteController@novo');
+
+
 
 
 #ROTAS

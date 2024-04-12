@@ -9,13 +9,19 @@
   </head>
   <body>
     <main class="container mt-5">
-        <h3>Inserir categoria</h3>
+        <h3>Inserir produto</h3>
     
-        <form action="/categoria/novo" method="POST">
+        <form action="/produto/novo" method="POST">
             <div class="row mb-3 mt-3">
                 <div class="col-6">
-                    <label for="descricao" class="form-label">Descricao</label>
-                    <input type="text" class="form-control" name="descricao" placeholder="Descrição">
+                    <label for="descricao" class="form-label">Nome</label>
+                    <input type="text" class="form-control" name="nome" placeholder="Nome">
+                    
+                    <label for="descricao" class="form-label mt-2">Valor</label>
+                    <input type="text" class="form-control" name="valor" placeholder="0.00">
+                    
+                    <label for="descricao" class="form-label mt-2">Categoria</label>
+                    <input type="text" class="form-control" name="categoria" placeholder="Categoria">
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Enviar</button>
