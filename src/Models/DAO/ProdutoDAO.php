@@ -22,7 +22,7 @@ class ProdutoDAO {
             $p->bindValue(":categoria", $produto->getCategoria());
             return $p->execute();
         } catch (\Exception $e) {
-            echo $e;
+            return 0;
         }
     }
 
