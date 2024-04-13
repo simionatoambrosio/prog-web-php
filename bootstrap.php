@@ -269,9 +269,9 @@ $r->post('/exercicio10/resposta', function(){
 });
 
 # Projeto CRUD
-# Categoria
 
-# Chamando o formulário para inserir categoria
+# Categoria
+# Chamando o formulário para inserir o registro
 $r->get('/categoria/inserir', 'Php\Primeiroprojeto\Controllers\CategoriaController@inserir');
 
 # Enviando os dados para serem armazenados no banco de dados
@@ -279,8 +279,7 @@ $r->post('/categoria/novo', 'Php\Primeiroprojeto\Controllers\CategoriaController
 
 
 # Produto
-
-# Chamando o formulário para inserir produto
+# Chamando o formulário para inserir o registro
 $r->get('/produto/inserir', 'Php\Primeiroprojeto\Controllers\ProdutoController@inserir');
 
 # Enviando os dados para serem armazenados no banco de dados
@@ -288,12 +287,25 @@ $r->post('/produto/novo', 'Php\Primeiroprojeto\Controllers\ProdutoController@nov
 
 
 # Cliente
-
-# Chamando o formulário para inserir produto
+# Chamando o formulário para inserir o registro
 $r->get('/cliente/inserir', 'Php\Primeiroprojeto\Controllers\ClienteController@inserir');
 
 # Enviando os dados para serem armazenados no banco de dados
 $r->post('/cliente/novo', 'Php\Primeiroprojeto\Controllers\ClienteController@novo');
+
+# Fornecedor
+# Chamando o formulário para inserir o registro
+$r->get('/fornecedor/inserir', 'Php\Primeiroprojeto\Controllers\FornecedorController@inserir');
+
+# Enviando os dados para serem armazenados no banco de dados
+$r->post('/fornecedor/novo', 'Php\Primeiroprojeto\Controllers\FornecedorController@novo');
+
+# Despesa
+# Chamando o formulário para inserir o registro
+$r->get('/despesa/inserir', 'Php\Primeiroprojeto\Controllers\DespesaController@inserir');
+
+# Enviando os dados para serem armazenados no banco de dados
+$r->post('/despesa/novo', 'Php\Primeiroprojeto\Controllers\DespesaController@novo');
 
 
 
