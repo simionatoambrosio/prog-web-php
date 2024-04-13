@@ -7,14 +7,14 @@ class Produto {
     private $id;
     private $nome;
     private $valor;
-    private $id_categoria;
+    private $categoria;
 
-    public function __construct($id, $nome, $valor, $id_categoria)
+    public function __construct($id, $nome, $valor, $categoria)
     {
         $this->setId($id);
         $this->setNome($nome);
         $this->setValor($valor);
-        $this->setIdCategoria($id_categoria);
+        $this->setCategoria($categoria);
     }
 
     public function getId() {
@@ -41,12 +41,12 @@ class Produto {
         $this->valor = $valor;
     }
 
-    public function getIdCategoria() {
-        return $this->id_categoria;
+    public function getCategoria() {
+        return $this->categoria;
     }
 
-    public function SetIdCategoria($id_categoria) {
-        $this->id_categoria = $id_categoria;
+    public function SetCategoria($categoria) {
+        $this->categoria = $categoria;
     }
 
 }
