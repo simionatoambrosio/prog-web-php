@@ -11,7 +11,7 @@ class ClienteController {
     }
 
     public function novo($params) {
-        $cliente = new Cliente(0, $_POST["nome"], $_POST["telefone"], $_POST["email"]);
+        $cliente = new Cliente(0, $_POST["nome"], $_POST["cpf"], $_POST["telefone"], $_POST["email"]);
         $clienteDAO = new ClienteDAO();
         if ($clienteDAO->inserir($cliente)) {
             return "Inserido com sucesso!";

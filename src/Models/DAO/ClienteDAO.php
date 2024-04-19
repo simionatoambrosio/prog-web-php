@@ -14,10 +14,11 @@ class ClienteDAO {
 
     public function inserir(Cliente $cliente) {
         try {
-            $sql = "INSERT INTO cliente (nome, telefone, email) VALUES (:nome, :telefone, :email)";
+            $sql = "INSERT INTO cliente (nome, cpf, telefone, email) VALUES (:nome, :cpf, :telefone, :email)";
             // agora a variável PDO tá dentro do objeto conexão
             $p = $this->conexao->getConexao()->prepare($sql); // $p de prepare conexao
             $p->bindValue(":nome", $cliente->getNome());
+            $p->bindValue(":cpf", $cliente->getCpf());
             $p->bindValue(":telefone", $cliente->getTelefone());
             $p->bindValue(":email", $cliente->getEmail());
             return $p->execute();

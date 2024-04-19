@@ -6,13 +6,15 @@ class Cliente {
 
     private $id;
     private $nome;
+    private $cpf;
     private $telefone;
     private $email;
 
-    public function __construct($id, $nome, $telefone, $email)
+    public function __construct($id, $nome, $cpf, $telefone, $email)
     {
         $this->setId($id);
         $this->setNome($nome);
+        $this->setCpf($cpf);
         $this->setTelefone($telefone);
         $this->setEmail($email);
     }
@@ -31,6 +33,14 @@ class Cliente {
 
     public function setNome($nome) {
         $this->nome = $nome;
+    }
+
+    public function getCpf() {
+        return $this->cpf;
+    }
+
+    public function setCpf($cpf) {
+        $this->cpf = $cpf;
     }
 
     public function getTelefone() {
