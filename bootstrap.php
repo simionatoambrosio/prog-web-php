@@ -271,6 +271,9 @@ $r->post('/exercicio10/resposta', function(){
 # Projeto CRUD
 
 # Categoria
+# Consultando todas as categorias cadastradas
+$r->get('/categoria', 'Php\Primeiroprojeto\Controllers\CategoriaController@index');
+
 # Chamando o formulário para inserir o registro
 $r->get('/categoria/inserir', 'Php\Primeiroprojeto\Controllers\CategoriaController@inserir');
 
