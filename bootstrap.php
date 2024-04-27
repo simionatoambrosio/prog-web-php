@@ -273,12 +273,19 @@ $r->post('/exercicio10/resposta', function(){
 # Categoria
 # Consultando todas as categorias cadastradas
 $r->get('/categoria', 'Php\Primeiroprojeto\Controllers\CategoriaController@index');
+$r->get('/categoria/{acao}/{status}', 'Php\Primeiroprojeto\Controllers\CategoriaController@index');
 
 # Chamando o formulário para inserir o registro
 $r->get('/categoria/inserir', 'Php\Primeiroprojeto\Controllers\CategoriaController@inserir');
 
 # Enviando os dados para serem armazenados no banco de dados
 $r->post('/categoria/novo', 'Php\Primeiroprojeto\Controllers\CategoriaController@novo');
+
+// # Enviando os dados para serem armazenados no banco de dados
+// $r->post('/categoria/alterar', 'Php\Primeiroprojeto\Controllers\CategoriaController@alterar');
+
+// # Enviando os dados para serem armazenados no banco de dados
+// $r->post('/categoria/excluir', 'Php\Primeiroprojeto\Controllers\CategoriaController@excluir');
 
 
 # Produto

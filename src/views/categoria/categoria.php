@@ -4,29 +4,38 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.5/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.5/css/dataTables.bootstrap5.css">
+    
 
     <title>Categorias</title>
   </head>
   <body>
     <main class="container mt-5">
-
-        <div class="alert alert-success alert-dismissible fade show" <?= $inserir_sucesso ?> role="alert">
-            Registro inserido com sucesso!
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-
-        <div class="alert alert-danger alert-dismissible fade show" <?= $inserir_erro ?> role="alert">
-            Erro ao inserir o registro!
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-
-
+        
+        <?php if ($mensagem == "Registro inserido com sucesso!") { ?>
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <?= $mensagem ?>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+        <?php } ?>
+        <?php if ($mensagem == "Erro ao inserir!!") { ?>
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <?= $mensagem ?>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+        <?php } ?>
+        
         <div class="row d-flex justify-content-between">
             <h3>Categorias</h3>
             <a href="/categoria/inserir" class="btn btn-primary"> <i class="fas fa-plus"></i> Nova categoria</a>
         </div>
 
-        <table class="table table-stripped table-hover mt-5">
+        <table class="table table-stripped table-hover mt-5" id="tabela">
             <thead>
                 <th>Descrição</th>
                 <th>Ações</th>
@@ -36,17 +45,19 @@
                     <tr>
                         <td><?= $c['descricao'] ?></td>
                         <td>
-                            <a href="" class="btn btn-sm btn-warning">Alterar</a>
-                            <a href="" class="btn btn-sm btn-danger">Alterar</a>
+                            <a href="/categoria/alterar" class="btn btn-sm btn-warning">Alterar</a>
+                            <a href="/categoria/excluir" class="btn btn-sm btn-danger">Excluir</a>
                         </td>
                     </tr>
                 <?php } ?>
             </tbody>
         </table>
+        
+        <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+        <script src="https://cdn.datatables.net/2.0.5/js/dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/2.0.5/js/dataTables.bootstrap5.min.js"></script>
 
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script> let table = new DataTable('#tabela') </script>
     </main>
   </body>
 </html>
