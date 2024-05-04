@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.5/css/dataTables.bootstrap5.css">
     
 
-    <title>Categorias</title>
+    <title>Despesa</title>
   </head>
   <body>
     <main class="container mt-5">
@@ -65,22 +65,26 @@
         <?php } ?>
         
         <div class="row d-flex justify-content-between">
-            <h3>Categorias</h3>
-            <a href="/categoria/inserir" class="btn btn-primary"> <i class="fas fa-plus"></i> Nova categoria</a>
+            <h3>Despesa</h3>
+            <a href="/despesa/inserir" class="btn btn-primary"> <i class="fas fa-plus"></i> Nova despesa</a>
         </div>
 
         <table class="table table-stripped table-hover mt-5" id="tabela">
             <thead>
                 <th>Descrição</th>
+                <th>Valor</th>
+                <th>Data</th>
                 <th>Ações</th>
             </thead>
             <tbody>
                 <?php while($c = $resultado->fetch(PDO::FETCH_ASSOC)) { ?>
                     <tr>
                         <td><?= $c['descricao'] ?></td>
+                        <td><?= $c['valor'] ?></td>
+                        <td><?= $c['data'] ?></td>
                         <td>
-                            <a href="/categoria/alterar/id/<?= $c["id"] ?>" class="btn btn-sm btn-warning">Alterar</a>
-                            <a href="/categoria/excluir/id/<?= $c["id"] ?>" class="btn btn-sm btn-danger">Excluir</a>
+                            <a href="/despesa/alterar/id/<?= $c["id"] ?>" class="btn btn-sm btn-warning">Alterar</a>
+                            <a href="/despesa/excluir/id/<?= $c["id"] ?>" class="btn btn-sm btn-danger">Excluir</a>
                         </td>
                     </tr>
                 <?php } ?>

@@ -281,41 +281,115 @@ $r->get('/categoria/inserir', 'Php\Primeiroprojeto\Controllers\CategoriaControll
 # Enviando os dados para serem armazenados no banco de dados
 $r->post('/categoria/novo', 'Php\Primeiroprojeto\Controllers\CategoriaController@novo');
 
-// # Enviando os dados para serem armazenados no banco de dados
-// $r->post('/categoria/alterar', 'Php\Primeiroprojeto\Controllers\CategoriaController@alterar');
+# Enviando os dados para serem armazenados no banco de dados
+$r->get('/categoria/alterar/id/{id}', 'Php\Primeiroprojeto\Controllers\CategoriaController@alterar');
 
-// # Enviando os dados para serem armazenados no banco de dados
-// $r->post('/categoria/excluir', 'Php\Primeiroprojeto\Controllers\CategoriaController@excluir');
+# Enviando os dados para serem armazenados no banco de dados
+$r->get('/categoria/excluir/id/{id}', 'Php\Primeiroprojeto\Controllers\CategoriaController@excluir');
+
+# Enviando os dados para serem armazenados no banco de dados
+$r->post('/categoria/editar', 'Php\Primeiroprojeto\Controllers\CategoriaController@editar');
+
+# Enviando os dados para serem armazenados no banco de dados
+$r->post('/categoria/deletar', 'Php\Primeiroprojeto\Controllers\CategoriaController@deletar');
 
 
 # Produto
+$r->get('/produto', 'Php\Primeiroprojeto\Controllers\ProdutoController@index');
+$r->get('/produto/{acao}/{status}', 'Php\Primeiroprojeto\Controllers\ProdutoController@index');
+
 # Chamando o formulário para inserir o registro
 $r->get('/produto/inserir', 'Php\Primeiroprojeto\Controllers\ProdutoController@inserir');
 
 # Enviando os dados para serem armazenados no banco de dados
 $r->post('/produto/novo', 'Php\Primeiroprojeto\Controllers\ProdutoController@novo');
 
+# Enviando os dados para serem armazenados no banco de dados
+$r->get('/produto/alterar/id/{id}', 'Php\Primeiroprojeto\Controllers\ProdutoController@alterar');
+
+# Enviando os dados para serem armazenados no banco de dados
+$r->get('/produto/excluir/id/{id}', 'Php\Primeiroprojeto\Controllers\ProdutoController@excluir');
+
+# Enviando os dados para serem armazenados no banco de dados
+$r->post('/produto/editar', 'Php\Primeiroprojeto\Controllers\ProdutoController@editar');
+
+# Enviando os dados para serem armazenados no banco de dados
+$r->post('/produto/deletar', 'Php\Primeiroprojeto\Controllers\ProdutoController@deletar');
+
 
 # Cliente
+
+# Consultando todas os clientes cadastradas
+$r->get('/cliente', 'Php\Primeiroprojeto\Controllers\ClienteController@index');
+$r->get('/cliente/{acao}/{status}', 'Php\Primeiroprojeto\Controllers\ClienteController@index');
+
 # Chamando o formulário para inserir o registro
 $r->get('/cliente/inserir', 'Php\Primeiroprojeto\Controllers\ClienteController@inserir');
 
 # Enviando os dados para serem armazenados no banco de dados
 $r->post('/cliente/novo', 'Php\Primeiroprojeto\Controllers\ClienteController@novo');
 
+# Enviando os dados para serem armazenados no banco de dados
+$r->post('/cliente/novo', 'Php\Primeiroprojeto\Controllers\ClienteController@novo');
+
+# Enviando os dados para serem armazenados no banco de dados
+$r->get('/cliente/alterar/id/{id}', 'Php\Primeiroprojeto\Controllers\ClienteController@alterar');
+
+# Enviando os dados para serem armazenados no banco de dados
+$r->get('/cliente/excluir/id/{id}', 'Php\Primeiroprojeto\Controllers\ClienteController@excluir');
+
+# Enviando os dados para serem armazenados no banco de dados
+$r->post('/cliente/editar', 'Php\Primeiroprojeto\Controllers\ClienteController@editar');
+
+# Enviando os dados para serem armazenados no banco de dados
+$r->post('/cliente/deletar', 'Php\Primeiroprojeto\Controllers\ClienteController@deletar');
+
+
 # Fornecedor
+$r->get('/fornecedor', 'Php\Primeiroprojeto\Controllers\FornecedorController@index');
+$r->get('/fornecedor/{acao}/{status}', 'Php\Primeiroprojeto\Controllers\FornecedorController@index');
+
 # Chamando o formulário para inserir o registro
 $r->get('/fornecedor/inserir', 'Php\Primeiroprojeto\Controllers\FornecedorController@inserir');
 
 # Enviando os dados para serem armazenados no banco de dados
 $r->post('/fornecedor/novo', 'Php\Primeiroprojeto\Controllers\FornecedorController@novo');
 
+# Enviando os dados para serem armazenados no banco de dados
+$r->get('/fornecedor/alterar/id/{id}', 'Php\Primeiroprojeto\Controllers\FornecedorController@alterar');
+
+# Enviando os dados para serem armazenados no banco de dados
+$r->get('/fornecedor/excluir/id/{id}', 'Php\Primeiroprojeto\Controllers\FornecedorController@excluir');
+
+# Enviando os dados para serem armazenados no banco de dados
+$r->post('/fornecedor/editar', 'Php\Primeiroprojeto\Controllers\FornecedorController@editar');
+
+# Enviando os dados para serem armazenados no banco de dados
+$r->post('/fornecedor/deletar', 'Php\Primeiroprojeto\Controllers\FornecedorController@deletar');
+
+
 # Despesa
+$r->get('/despesa', 'Php\Primeiroprojeto\Controllers\DespesaController@index');
+$r->get('/despesa/{acao}/{status}', 'Php\Primeiroprojeto\Controllers\DespesaController@index');
+
 # Chamando o formulário para inserir o registro
 $r->get('/despesa/inserir', 'Php\Primeiroprojeto\Controllers\DespesaController@inserir');
 
 # Enviando os dados para serem armazenados no banco de dados
 $r->post('/despesa/novo', 'Php\Primeiroprojeto\Controllers\DespesaController@novo');
+
+# Enviando os dados para serem armazenados no banco de dados
+$r->get('/despesa/alterar/id/{id}', 'Php\Primeiroprojeto\Controllers\DespesaController@alterar');
+
+# Enviando os dados para serem armazenados no banco de dados
+$r->get('/despesa/excluir/id/{id}', 'Php\Primeiroprojeto\Controllers\DespesaController@excluir');
+
+# Enviando os dados para serem armazenados no banco de dados
+$r->post('/despesa/editar', 'Php\Primeiroprojeto\Controllers\DespesaController@editar');
+
+# Enviando os dados para serem armazenados no banco de dados
+$r->post('/despesa/deletar', 'Php\Primeiroprojeto\Controllers\DespesaController@deletar');
+
 
 
 
