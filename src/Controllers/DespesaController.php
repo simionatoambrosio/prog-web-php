@@ -46,10 +46,10 @@ class DespesaController {
         $despesa = new Despesa(0, $_POST["descricao"], $_POST["valor"], $_POST["data"]);
         $despesaDAO = new DespesaDAO();
         if ($despesaDAO->inserir($despesa)) {
-            return "Inserido com sucesso!";
+            header("location: /despesa/inserir/true");
         }
         else {
-            return "Erro ao inserir!";
+            header("location: /despesa/inserir/false");
         }
     }
 

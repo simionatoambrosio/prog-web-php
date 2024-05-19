@@ -46,10 +46,10 @@ class FornecedorController {
         $fornecedor = new Fornecedor(0, $_POST["razaoSocial"], $_POST["cnpj"], $_POST["telefone"], $_POST["email"]);
         $fornecedorDAO = new FornecedorDAO();
         if ($fornecedorDAO->inserir($fornecedor)) {
-            return "Inserido com sucesso!";
+            header("location: /fornecedor/inserir/true");
         }
         else {
-            return "Erro ao inserir!";
+            header("location: /fornecedor/inserir/false");
         }
     }
 

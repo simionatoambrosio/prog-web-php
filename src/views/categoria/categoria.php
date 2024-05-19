@@ -64,7 +64,7 @@
                 </div>
         <?php } ?>
         
-        <div class="row d-flex justify-content-between">
+        <div class="d-flex justify-content-between">
             <h3>Categorias</h3>
             <a href="/categoria/inserir" class="btn btn-primary"> <i class="fas fa-plus"></i> Nova categoria</a>
         </div>

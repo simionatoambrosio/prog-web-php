@@ -46,10 +46,10 @@ class ProdutoController {
         $produto = new Produto(0, $_POST["nome"], $_POST["valor"], $_POST["categoria"]);
         $produtoDAO = new ProdutoDAO();
         if ($produtoDAO->inserir($produto)) {
-            return "Inserido com sucesso!";
+            header("location: /produto/inserir/true");
         }
         else {
-            return "Erro ao inserir!";
+            header("location: /produto/inserir/false");
         }
     }
 

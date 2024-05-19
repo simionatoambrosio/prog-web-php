@@ -46,10 +46,10 @@ class ClienteController {
         $cliente = new Cliente(0, $_POST["nome"], $_POST["cpf"], $_POST["telefone"], $_POST["email"]);
         $clienteDAO = new ClienteDAO();
         if ($clienteDAO->inserir($cliente)) {
-            return "Inserido com sucesso!";
+            header("location: /cliente/inserir/true");
         }
         else {
-            return "Erro ao inserir!";
+            header("location: /cliente/inserir/false");
         }
     }
 
