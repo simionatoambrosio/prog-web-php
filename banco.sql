@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 13/04/2024 às 23:23
--- Versão do servidor: 10.4.28-MariaDB
--- Versão do PHP: 8.0.28
+-- Tempo de geração: 19/05/2024 às 02:52
+-- Versão do servidor: 10.4.32-MariaDB
+-- Versão do PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,6 +32,15 @@ CREATE TABLE `categoria` (
   `descricao` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
+--
+-- Despejando dados para a tabela `categoria`
+--
+
+INSERT INTO `categoria` (`id`, `descricao`) VALUES
+(12, 'Eletrônicos'),
+(13, 'Alimentação'),
+(14, 'Limpeza');
+
 -- --------------------------------------------------------
 
 --
@@ -41,6 +50,7 @@ CREATE TABLE `categoria` (
 CREATE TABLE `cliente` (
   `id` int(11) NOT NULL,
   `nome` varchar(256) NOT NULL,
+  `cpf` varchar(60) NOT NULL,
   `telefone` varchar(11) NOT NULL,
   `email` varchar(256) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
@@ -49,11 +59,11 @@ CREATE TABLE `cliente` (
 -- Despejando dados para a tabela `cliente`
 --
 
-INSERT INTO `cliente` (`id`, `nome`, `telefone`, `email`) VALUES
-(1, 'Teste', '18997113590', 'gabriel@email.com'),
-(2, 'Gabriel', '18997113590', 'gabriel@email.com'),
-(3, 'Arthur', '99999999999', 'arthur@email.com'),
-(4, 'Guilherme', '99999999999', 'guilherme@email.com');
+INSERT INTO `cliente` (`id`, `nome`, `cpf`, `telefone`, `email`) VALUES
+(2, 'Gabriel', '111.111.111-12', '18997113590', 'gabriel@email.com'),
+(3, 'Arthur', '111.111.111-13', '99999999999', 'arthur@email.com'),
+(4, 'Guilherme', '111.111.111-14', '99999999999', 'guilherme@email.com'),
+(6, 'Reginaldo', '88888888888', '1231293123', 'reginaldo@email.com');
 
 -- --------------------------------------------------------
 
@@ -166,13 +176,13 @@ ALTER TABLE `produto`
 -- AUTO_INCREMENT de tabela `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de tabela `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de tabela `despesa`
@@ -184,13 +194,13 @@ ALTER TABLE `despesa`
 -- AUTO_INCREMENT de tabela `fornecedor`
 --
 ALTER TABLE `fornecedor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `produto`
 --
 ALTER TABLE `produto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
