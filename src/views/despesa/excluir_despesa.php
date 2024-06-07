@@ -20,7 +20,7 @@
                     <label for="valor" class="form-label">Valor</label>
                     <input type="text" class="form-control" maxlength="60" name="valor" placeholder="Valor" disabled value="<?= $resultado["valor"];  ?>">
                     <label for="data" class="form-label">Data</label>
-                    <input type="text" class="form-control" maxlength="60" name="data" placeholder="Data" disabled value="<?= $resultado["data"];  ?>">
+                    <input type="date" class="form-control" maxlength="60" name="data" placeholder="Data" disabled value="<?= $resultado["data"];  ?>">
                 </div>
             </div>
             <p>Você deseja realmente excluir esse registro?</p>

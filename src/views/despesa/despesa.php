@@ -81,7 +81,12 @@
                     <tr>
                         <td><?= $c['descricao'] ?></td>
                         <td><?= $c['valor'] ?></td>
-                        <td><?= $c['data'] ?></td>
+                        <td>
+                            <?php
+                                $data = new DateTime($c['data']);
+                                echo $data->format('d/m/Y')
+                            ?>
+                        </td>
                         <td>
                             <a href="/despesa/alterar/id/<?= $c["id"] ?>" class="btn btn-sm btn-warning">Alterar</a>
                             <a href="/despesa/excluir/id/<?= $c["id"] ?>" class="btn btn-sm btn-danger">Excluir</a>

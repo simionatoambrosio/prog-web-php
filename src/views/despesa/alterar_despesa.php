@@ -23,8 +23,7 @@
                     <input type="text" class="form-control" maxlength="60" name="valor" placeholder="valor" value="<?= $resultado["valor"];  ?>">
 
                     <label for="data" class="form-label">Data</label>
-                    <input type="text" class="form-control" maxlength="60" name="data" placeholder="Data" value="<?= $resultado["data"];  ?>">
-
+                    <input type="date" class="form-control" maxlength="60" name="data" placeholder="Data" value="<?= $resultado["data"] ?>">
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Salvar</button>
